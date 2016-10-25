@@ -1,3 +1,23 @@
 <div class="home">
-  <p>{{ctrl.message}}</p>
+  <form
+    class="form-inline"
+    ng-submit="ctrl.askWatson()">
+    <input
+      type="text"
+      class="form-control"
+      id="question-input"
+      placeholder="Ask Watson a question..."
+      ng-model="ctrl.question">
+    <button
+      type="submit"
+      class="btn btn-default">
+      Go!
+    </button>
+  </form>
+
+  <div
+    class="answer"
+    ng-show="ctrl.showAnswer">
+    <p>{{ctrl.answer}}</p>
+  </div>
 </div>
