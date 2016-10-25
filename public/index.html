@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="watsonApp">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>Watson Fitness Attendant</title>
-	
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/angular/angular.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+  
+  <title>Watson Fitness Attendant</title>
+  
+  <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-<body>
-	<p>Hello world!</p>
+<body class="container-fluid">
+  <h1>Watson Fitness Attendant</h1>
+  <ui-view></ui-view>
+
+  <!-- include .js files below -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <!-- <script src="/bower_components/angular-route/angular-route.min.js"></script> -->
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="./app/app.js"></script>
+  <script src="./app/home/home.js"></script>
+  <script src="./app/view1/view1.js"></script>
 </body>
 </html>
