@@ -29,6 +29,8 @@ angular.module('watsonApp.home', ['ui.router'])
       data: json
     }).then(function success(response) {
         console.log(response);
+        homeCtrl.answer = response.data;
+        homeCtrl.showAnswer = true;
       }, function error(response) {
         console.log(response)
       });
