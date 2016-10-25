@@ -19,5 +19,12 @@
     class="answer"
     ng-show="ctrl.showAnswer">
     <p>{{ctrl.answer}}</p>
+    <p>Confidence: {{ctrl.confidence}}</p>
+  </div>
+  
+  <div
+    class="alert alert-info"
+    ng-show="ctrl.showAlert">
+    {{ctrl.alertMsg}}
   </div>
 </div>
