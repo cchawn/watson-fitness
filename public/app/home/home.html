@@ -1,6 +1,6 @@
 <div class="home">
   <form
-    class="form-inline"
+    class="question form-inline"
     ng-submit="ctrl.askWatson()">
     <input
       type="text"
@@ -21,7 +21,7 @@
     <p>{{ctrl.answer}}</p>
     <p>Confidence: {{ctrl.confidence}}</p>
   </div>
-  
+
   <div
     class="alert alert-info"
     ng-show="ctrl.showAlert">

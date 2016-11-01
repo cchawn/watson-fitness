@@ -1,4 +1,16 @@
+.home .question input {
+  width: 250px;
+}
+
 .home .answer {
   margin: 10px 0;
   font-style: italic;
+}
+
+.home .answer p {
+  width: 50%;
+}
+
+.home .alert {
+  margin: 10px 0;
 }

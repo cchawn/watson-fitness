@@ -51,9 +51,10 @@ app.post('/question', function(req, res){
     });
 
     result.on('end', function(chunk) {    
+      // console.log('**************************');
       // console.log(output);
       var results = JSON.parse(output);
-      console.log(results);
+      // console.log(results);
       res.send(results);
     });
   });
@@ -69,7 +70,7 @@ app.post('/question', function(req, res){
       questionText : query
     }
   };   
-  console.log(JSON.stringify(question));
+  // console.log(JSON.stringify(question));
 
   // Set the POST body and send to Watson
   post_req.write(JSON.stringify(question));

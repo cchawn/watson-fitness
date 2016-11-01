@@ -22,6 +22,13 @@ angular.module('watsonApp.home', ['ui.router'])
   homeCtrl.showAlert = false;
 
   homeCtrl.askWatson = function(){
+    homeCtrl.answer = '';
+    homeCtrl.confidence = 0;
+    homeCtrl.showAnswer = false;
+
+    homeCtrl.alertMsg = '';
+    homeCtrl.showAlert = false;
+
     var json = {
       "question": homeCtrl.question
     };
