@@ -205,6 +205,17 @@ footer p.copyright {
   margin-bottom: 64px;
 }
 
+.home section.answer .answer-text p {
+  max-height: 400px;
+  overflow: scroll;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.home section.answer .answer-text p.confidence {
+  margin-top: 15px;
+}
+
 .home section.answer .answer-footer {
   padding: 15px;
   position: absolute;

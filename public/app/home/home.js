@@ -10,7 +10,7 @@ angular.module('watsonApp.home', ['ui.router'])
   });
 })
 
-.controller('HomeCtrl', function($http) {
+.controller('HomeCtrl', function($http, $scope) {
   var homeCtrl = this;
 
   homeCtrl.placeholder = 'Your question here!';
@@ -76,4 +76,30 @@ angular.module('watsonApp.home', ['ui.router'])
     homeCtrl.answer = '';
     homeCtrl.confidence = 0;
   }
+
+  function typeQuestion(i, string) {
+    setTimeout(function () {
+      homeCtrl.placeholder += string[i];
+      $scope.$apply();
+      i++;
+      if (i < string.length)
+        typeQuestion(i, string);
+    }, 100)
+  }
+
+  function typing() {
+    var placeholders = [
+      'How can I strengthen my back?',
+      'Should I lift weights with a back injury?',
+      'I have lower back pain, what can I do?',
+      'What exercises are good for your back?'
+    ];
+    var max = 4;
+    var min = 0;
+    homeCtrl.placeholder = '';
+    var ind = Math.floor(Math.random() * (max - min + 1)) + min;
+    typeQuestion(0, placeholders[ind]);
+  }
+
+  typing();
 });
