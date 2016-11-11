@@ -1,0 +1,9 @@
+applications:
+- path: .
+  memory: 256M
+  command: npm start
+  instances: 1
+  domain: mybluemix.net
+  name: watson-fitness-attendant
+  host: watson-fitness-attendant
+  disk_quota: 1024M

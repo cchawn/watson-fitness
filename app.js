@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 // var watson = require('watson-developer-cloud');
 var app = express();
 
+var port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
+
 app.use(express.static(__dirname + '/public'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
@@ -82,6 +84,6 @@ app.all('/*', function(req, res, next) {
     res.sendFile('index.html', { root: __dirname + '/public' });
 });
 
-app.listen(8080, function () {
-  console.log('Running on http://localhost:8080/');
+app.listen(port, function () {
+  console.log('Running on:' + port);
 });
