@@ -13,6 +13,8 @@ angular.module('watsonApp.home', ['ui.router'])
 .controller('HomeCtrl', function($http) {
   var homeCtrl = this;
 
+  homeCtrl.placeholder = 'Your question here!';
+
   homeCtrl.question = '';
   homeCtrl.answer = '';
   homeCtrl.confidence = 0;
@@ -37,18 +39,41 @@ angular.module('watsonApp.home', ['ui.router'])
       url: '/question',
       data: json
     }).then(function success(response) {
-        console.log(response);
-        if (response.data.question.answers.length > 0) {
-          var answer = response.data.question.evidencelist[0]
-          homeCtrl.answer = answer.text;
-          homeCtrl.confidence = answer.value;
-          homeCtrl.showAnswer = true;
+        // console.log(response);
+        var answerslist = response.data.question.answers;
+        var evidencelist = response.data.question.evidencelist;
+        if (answerslist.length > 0 && evidencelist.length > 0) {
+          var answer = evidencelist[0];
+          if (answer.hasOwnProperty('text')){
+            homeCtrl.question = capitalizeFirstLetter(homeCtrl.question);
+            homeCtrl.answer = answer.text;
+            homeCtrl.confidence = answer.value;
+            homeCtrl.showAnswer = true;
+          } else {
+            noAnswer();
+          }
         } else {
-          homeCtrl.alertMsg = 'No answers for this question... sad face.';
-          homeCtrl.showAlert = true;
+          noAnswer();
         }
       }, function error(response) {
         console.log(response)
       });
   };
+
+  function noAnswer() {
+    console.log('No answer');
+    homeCtrl.alertMsg = 'No answer for this question, try asking something else!';
+    homeCtrl.showAlert = true;
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  homeCtrl.dismiss = function(){
+    homeCtrl.showAnswer = false;
+    homeCtrl.question = '';
+    homeCtrl.answer = '';
+    homeCtrl.confidence = 0;
+  }
 });

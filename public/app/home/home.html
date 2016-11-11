@@ -1,30 +1,49 @@
 <div class="home">
-  <form
-    class="question form-inline"
-    ng-submit="ctrl.askWatson()">
-    <input
-      type="text"
-      class="form-control"
-      id="question-input"
-      placeholder="Ask Watson a question..."
-      ng-model="ctrl.question">
-    <button
-      type="submit"
-      class="btn btn-default">
-      Go!
-    </button>
-  </form>
+  <section class="question-inputs container-fluid">
+    <form
+      class="question"
+      ng-submit="ctrl.askWatson()"
+      autocomplete="off">
+      <input
+        type="text"
+        id="question-input"
+        placeholder="{{ctrl.placeholder}}"
+        ng-model="ctrl.question">
+      <button
+        type="submit"
+        class="cta cta-primary">
+        Ask Watson
+      </button>
+    </form>
+  </section>
 
-  <div
+  <section
     class="answer"
     ng-show="ctrl.showAnswer">
-    <p>{{ctrl.answer}}</p>
-    <p>Confidence: {{ctrl.confidence}}</p>
-  </div>
+    <div class="answer-header">
+      <h2>{{ctrl.question}}</h2>
+      <div class="right">
+        <a
+          ng-click="ctrl.dismiss()"
+          href="#"
+          title="Dismiss">
+          <img src="../../assets/multiply.svg">
+        </a>
+      </div>
+    </div>
+    <div class="answer-text">
+      <p>{{ctrl.answer}}</p>
+      <p>Confidence: {{ctrl.confidence}}</p>
+    </div>
+    <div class="answer-footer">
+      <button ng-click="ctrl.dismiss()" class="cta cta-small cta-border">Close</button>
+      <button class="cta cta-small cta-secondary">Save</button>
+    </div>
+  </section>
 
-  <div
+  <!-- <aside
     class="alert alert-info"
     ng-show="ctrl.showAlert">
     {{ctrl.alertMsg}}
-  </div>
+  </aside> -->
 </div>

@@ -51,10 +51,7 @@ app.post('/question', function(req, res){
     });
 
     result.on('end', function(chunk) {    
-      // console.log('**************************');
-      // console.log(output);
       var results = JSON.parse(output);
-      // console.log(results);
       res.send(results);
     });
   });
