@@ -9,6 +9,11 @@
         id="question-input"
         placeholder="{{ctrl.placeholder}}"
         ng-model="ctrl.question">
+      <span 
+      class="my-alert"
+      ng-show="ctrl.showAlert">
+        {{ctrl.alertMsg}}
+      </span>
       <button
         type="submit"
         class="cta cta-primary">
@@ -40,10 +45,4 @@
       <button class="cta cta-small cta-secondary">Save</button>
     </div>
   </section>
-
-  <!-- <aside
-    class="alert alert-info"
-    ng-show="ctrl.showAlert">
-    {{ctrl.alertMsg}}
-  </aside> -->
 </div>

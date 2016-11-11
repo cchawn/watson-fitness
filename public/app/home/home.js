@@ -75,6 +75,7 @@ angular.module('watsonApp.home', ['ui.router'])
     homeCtrl.question = '';
     homeCtrl.answer = '';
     homeCtrl.confidence = 0;
+    typing();
   }
 
   function typeQuestion(i, string) {
@@ -91,10 +92,10 @@ angular.module('watsonApp.home', ['ui.router'])
     var placeholders = [
       'How can I strengthen my back?',
       'Should I lift weights with a back injury?',
-      'I have lower back pain, what can I do?',
-      'What exercises are good for your back?'
+      'I have lower back pain, what exercises can I do?',
+      'What exercises are good for my back?'
     ];
-    var max = 4;
+    var max = 3;
     var min = 0;
     homeCtrl.placeholder = '';
     var ind = Math.floor(Math.random() * (max - min + 1)) + min;

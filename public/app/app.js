@@ -3,7 +3,7 @@
 angular.module('watsonApp', [
   'ui.router',
   'watsonApp.home',
-  'watsonApp.learn'
+  'watsonApp.about'
 ])
 
 .config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
