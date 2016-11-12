@@ -18,4 +18,15 @@ $ bower install
 $ node app.js
 ```
 
-Go to [http://localhost:8080](http://localhost:8080) in your browser. Voila! There's the app.
+If you're running it locally you can go to [http://localhost:3000](http://localhost:3000) in your browser. Voila! There's the app.
+
+To push to Bluemix, first verify that you can run the app locally. You will need to modify the `manifest.yml` file to reflect the unique `name` and `host` for your application. Once this has been changed, from the app's root directory:
+
+```bash
+# login with cloud foundty
+$ cf login
+
+# enter username and password
+
+$ cf push
+```
