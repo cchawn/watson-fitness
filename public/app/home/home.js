@@ -13,7 +13,7 @@ angular.module('watsonApp.home', ['ui.router'])
 .controller('HomeCtrl', function($http, $scope) {
   var homeCtrl = this;
 
-  homeCtrl.placeholder = 'Your question here!';
+  homeCtrl.placeholder = 'Ask your question here';
 
   homeCtrl.question = '';
   homeCtrl.answer = '';
@@ -80,7 +80,7 @@ angular.module('watsonApp.home', ['ui.router'])
 
   function typeQuestion(i, string) {
     setTimeout(function () {
-      homeCtrl.placeholder += string[i];
+      homeCtrl.question += string[i];
       $scope.$apply();
       i++;
       if (i < string.length)
@@ -97,10 +97,25 @@ angular.module('watsonApp.home', ['ui.router'])
     ];
     var max = 3;
     var min = 0;
-    homeCtrl.placeholder = '';
+    homeCtrl.question = '';
     var ind = Math.floor(Math.random() * (max - min + 1)) + min;
     typeQuestion(0, placeholders[ind]);
   }
 
   typing();
-});
+})
+
+
+.directive('selectOnClick', ['$window', function ($window) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            element.on('click', function () {
+                if (!$window.getSelection().toString()) {
+                    // Required for mobile Safari
+                    this.setSelectionRange(0, this.value.length)
+                }
+            });
+        }
+    };
+}]);
