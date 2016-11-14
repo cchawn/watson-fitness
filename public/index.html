@@ -2,6 +2,7 @@
 <html ng-app="watsonApp">
 <head>
   <meta charset="utf-8">
+  <meta name="author" content="Christina Chan">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <base href="/">
@@ -14,15 +15,39 @@
 <body ng-controller="HomeCtrl as ctrl">
   <nav class="container-fluid">
     <ul class="left">
-      <li><a href="/" class="nav-link">Home</a></li>
-      <li><a href="/about" class="nav-link">About</a></li>
+      <li>
+        <a href="/"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'home')"
+          class="nav-link">
+          Demo
+        </a>
+      </li>
+      <li>
+        <a href="/about"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'about')"
+          class="nav-link">
+          About
+        </a>
+      </li>
     </ul>
     <ul class="middle">
       <li class="brand"><a href="/"><img alt="Watson Fitness Attendant" src="/assets/watson_logo.png"></a></li>
     </ul>
     <ul class="right">
-      <li><a href="#" class="nav-link">Log in</a></li>
-      <li><a href="#" class="cta cta-border">Sign up</a></li>
+      <li>
+        <a
+          href="/login"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'login')"
+          class="nav-link">
+          Log in
+        </a>
+      </li>
+      <li>
+        <a href="/login"
+          class="cta cta-border">
+          Sign up
+        </a>
+      </li>
     </ul>
     <ul class="right mobile">
       <li ng-click="ctrl.toggleMenu()" class="clickable">
@@ -35,13 +60,35 @@
     ng-show="ctrl.showMenu"
     class="mobile-menu container-fluid">
     <ul>
-      <li ng-click="ctrl.toggleMenu()"><a href="/" class="nav-link">Home</a></li>
-      <li ng-click="ctrl.toggleMenu()"><a href="/about" class="nav-link">About</a></li>
-      <li ng-click="ctrl.toggleMenu()"><a href="#" class="nav-link">Log in</a></li>
-      <li ng-click="ctrl.toggleMenu()"><a href="#" class="nav-link">Sign up</a></li>
+      <li ng-click="ctrl.toggleMenu()">
+        <a href="/"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'home')"
+          class="nav-link">
+          Demo
+        </a>
+      </li>
+      <li ng-click="ctrl.toggleMenu()">
+        <a href="/about"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'about')"
+          class="nav-link">
+          About
+        </a>
+      </li>
+      <li ng-click="ctrl.toggleMenu()">
+        <a href="/login"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'login')"
+          class="nav-link">
+          Log in
+        </a>
+      </li>
+      <li ng-click="ctrl.toggleMenu()">
+        <a href="/login"
+          class="nav-link">
+          Sign up
+        </a>
+      </li>
     </ul>
   </div>
-
   <div class="content">
     <h1 class="hidden">Watson Fitness Attendant</h1>
     <ui-view></ui-view>
@@ -51,7 +98,7 @@
       <li><a href="/"><img alt="Watson Fitness Attendant" src="/assets/watson_logo.png"></a></li>
     </ul>
     <p class="right copyright">
-      CISC 490: Cognitive Computing Using Watson, Group 5
+      CISC 490: Group 5
     </p>
   </footer>
 
@@ -61,5 +108,6 @@
   <script src="./app/app.js"></script>
   <script src="./app/home/home.js"></script>
   <script src="./app/about/about.js"></script>
+  <script src="./app/login/login.js"></script>
 </body>
 </html>

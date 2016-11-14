@@ -10,9 +10,10 @@ angular.module('watsonApp.home', ['ui.router'])
   });
 })
 
-.controller('HomeCtrl', function($http, $scope) {
+.controller('HomeCtrl', function($http, $scope, $state) {
   var homeCtrl = this;
 
+  homeCtrl.$state = $state;
   homeCtrl.placeholder = 'Ask your question here';
   homeCtrl.question = '';
   homeCtrl.answer = '';
@@ -28,7 +29,14 @@ angular.module('watsonApp.home', ['ui.router'])
       angular.element(document.querySelector('#mobile-menu')).addClass('visible');
       angular.element(document.querySelector('#hide-menu')).addClass('visible')
     }
-  }
+  };
+
+  homeCtrl.activeLink = function(state, link) {
+    if (state == link)
+      return 'active';
+    else
+      return '';
+  };
 
   homeCtrl.askWatson = function(){
     homeCtrl.answer = '';
@@ -118,19 +126,4 @@ angular.module('watsonApp.home', ['ui.router'])
   }
 
   typing();
-})
-
-
-.directive('selectOnClick', ['$window', function ($window) {
-    return {
-        restrict: 'A',
-        link: function (scope, element, attrs) {
-            element.on('click', function () {
-                if (!$window.getSelection().toString()) {
-                    // Required for mobile Safari
-                    this.setSelectionRange(0, this.value.length)
-                }
-            });
-        }
-    };
-}]);
+});
