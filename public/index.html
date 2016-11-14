@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-<body>
+<body ng-controller="HomeCtrl as ctrl">
   <nav class="container-fluid">
     <ul class="left">
       <li><a href="/" class="nav-link">Home</a></li>
@@ -24,7 +24,24 @@
       <li><a href="#" class="nav-link">Log in</a></li>
       <li><a href="#" class="cta cta-border">Sign up</a></li>
     </ul>
+    <ul class="right mobile">
+      <li ng-click="ctrl.toggleMenu()" class="clickable">
+          <img id="show-menu" ng-hide="ctrl.showMenu" alt="Menu" src="/assets/menu.svg">
+          <img id="hide-menu" ng-show="ctrl.showMenu" alt="Close" src="/assets/multiply.svg">
+      </li>
+    </ul>
   </nav>
+  <div id="mobile-menu"
+    ng-show="ctrl.showMenu"
+    class="mobile-menu container-fluid">
+    <ul>
+      <li ng-click="ctrl.toggleMenu()"><a href="/" class="nav-link">Home</a></li>
+      <li ng-click="ctrl.toggleMenu()"><a href="/about" class="nav-link">About</a></li>
+      <li ng-click="ctrl.toggleMenu()"><a href="#" class="nav-link">Log in</a></li>
+      <li ng-click="ctrl.toggleMenu()"><a href="#" class="nav-link">Sign up</a></li>
+    </ul>
+  </div>
+
   <div class="content">
     <h1 class="hidden">Watson Fitness Attendant</h1>
     <ui-view></ui-view>

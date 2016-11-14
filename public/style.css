@@ -41,7 +41,8 @@ a:focus {
 nav {
   text-align: center;
   overflow: auto;
-  padding-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 nav ul,
@@ -54,6 +55,10 @@ footer ul {
 
 nav ul.left {
   margin-top: 15px;
+}
+
+nav ul.right.mobile {
+  display: none;
 }
 
 nav ul li,
@@ -69,6 +74,22 @@ nav ul li a.nav-link {
 nav ul li img,
 footer ul li img {
   height: 50px;
+}
+
+nav ul.right.mobile img#hide-menu {
+  display: none;
+}
+
+nav ul.right.mobile img#hide-menu.visible {
+  display: block;
+}
+
+div.mobile-menu {
+  display: none;
+}
+
+div.mobile-menu.visible {
+  display: block;
 }
 
 footer {
@@ -155,6 +176,7 @@ footer p.copyright {
 .home section.question-inputs .question input {
   border: none;
   border-bottom: 1px solid rgba(0,0,0,.08);
+  border-radius: 0;
   font-size: 30px;
   padding: 15px 0;
 }
@@ -231,4 +253,92 @@ footer p.copyright {
 
 .about {
   text-align: center;
+}
+
+/********************/
+/*      TABLET      */
+/********************/
+@media (max-width: 769px){
+  .home section.question-inputs {
+    width: 90%;
+  }
+
+  .home section.question-inputs .question input {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 557px) {
+  nav ul li a.nav-link,
+  nav .cta {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .home section.question-inputs .question input {
+    font-size: 18px;
+  }
+}
+
+/********************/
+/*      MOBILE      */
+/********************/
+
+@media (max-width: 400px) {
+  nav ul.left, nav ul.right {
+    display: none;
+  }
+
+  nav ul.middle {
+    float: left;
+  }
+
+  nav ul.right.mobile {
+    display: inline-block;
+  }
+
+  nav ul.right.mobile img {
+    height: 25px;
+    margin-top: 10px;
+  }
+
+  div.mobile-menu {
+    position: absolute;
+    top: 65px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #F6F6F6;
+    z-index: 100;
+  }
+
+  div.mobile-menu ul,
+  div.mobile-menu li {
+    display: block;
+    padding: 0;
+  }
+
+  div.mobile-menu li{
+    margin: 15px;
+  }
+
+  div.mobile-menu li .nav-link {
+    font-size: 18px;
+  }
+
+  .home section.question-inputs {
+    width: 100%;
+  }
+
+  .home section.question-inputs .question input {
+    font-size: 18px;
+  }
+
+  footer p.copyright {
+    font-size: 8px;
+  }
+
+  footer ul.left {
+    display: none;
+  }
 }

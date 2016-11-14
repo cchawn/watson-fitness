@@ -9,6 +9,7 @@
         id="question-input"
         placeholder="{{ctrl.placeholder}}"
         ng-model="ctrl.question"
+        ng-focus="ctrl.clearAlert()"
         select-on-click>
       <span 
       class="my-alert"

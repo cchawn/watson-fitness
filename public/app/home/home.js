@@ -14,14 +14,21 @@ angular.module('watsonApp.home', ['ui.router'])
   var homeCtrl = this;
 
   homeCtrl.placeholder = 'Ask your question here';
-
   homeCtrl.question = '';
   homeCtrl.answer = '';
   homeCtrl.confidence = 0;
   homeCtrl.showAnswer = false;
-
   homeCtrl.alertMsg = '';
   homeCtrl.showAlert = false;
+  homeCtrl.showMenu = false;
+
+  homeCtrl.toggleMenu = function(){
+    homeCtrl.showMenu = !homeCtrl.showMenu;
+    if (homeCtrl.showMenu) {
+      angular.element(document.querySelector('#mobile-menu')).addClass('visible');
+      angular.element(document.querySelector('#hide-menu')).addClass('visible')
+    }
+  }
 
   homeCtrl.askWatson = function(){
     homeCtrl.answer = '';
@@ -31,44 +38,38 @@ angular.module('watsonApp.home', ['ui.router'])
     homeCtrl.alertMsg = '';
     homeCtrl.showAlert = false;
 
-    var json = {
-      "question": homeCtrl.question
-    };
-    $http({
-      method: 'POST',
-      url: '/question',
-      data: json
-    }).then(function success(response) {
-        // console.log(response);
-        var answerslist = response.data.question.answers;
-        var evidencelist = response.data.question.evidencelist;
-        if (answerslist.length > 0 && evidencelist.length > 0) {
-          var answer = evidencelist[0];
-          if (answer.hasOwnProperty('text')){
-            homeCtrl.question = capitalizeFirstLetter(homeCtrl.question);
-            homeCtrl.answer = answer.text;
-            homeCtrl.confidence = answer.value;
-            homeCtrl.showAnswer = true;
+    if (homeCtrl.question.length > 0) { // validation
+      var json = {
+        "question": homeCtrl.question
+      };
+      $http({
+        method: 'POST',
+        url: '/question',
+        data: json
+      }).then(function success(response) {
+          // console.log(response);
+          var answerslist = response.data.question.answers;
+          var evidencelist = response.data.question.evidencelist;
+          if (answerslist.length > 0 && evidencelist.length > 0) {
+            var answer = evidencelist[0];
+            if (answer.hasOwnProperty('text')){
+              homeCtrl.question = capitalizeFirstLetter(homeCtrl.question);
+              homeCtrl.answer = answer.text;
+              homeCtrl.confidence = answer.value;
+              homeCtrl.showAnswer = true;
+            } else {
+              alert('No answer for this question, try asking something else!');
+            }
           } else {
-            noAnswer();
+            alert('No answer for this question, try asking something else!');
           }
-        } else {
-          noAnswer();
-        }
-      }, function error(response) {
-        console.log(response)
-      });
+        }, function error(response) {
+          console.log(response)
+        });
+    } else { // emtpy question field
+      alert('Please enter a question!');
+    }
   };
-
-  function noAnswer() {
-    console.log('No answer');
-    homeCtrl.alertMsg = 'No answer for this question, try asking something else!';
-    homeCtrl.showAlert = true;
-  }
-
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
 
   homeCtrl.dismiss = function(){
     homeCtrl.showAnswer = false;
@@ -76,6 +77,20 @@ angular.module('watsonApp.home', ['ui.router'])
     homeCtrl.answer = '';
     homeCtrl.confidence = 0;
     typing();
+  };
+
+  homeCtrl.clearAlert = function(){
+    homeCtrl.alertMsg = '';
+    homeCtrl.showAlert = false;
+  }
+
+  function alert(msg) {
+    homeCtrl.alertMsg = msg;
+    homeCtrl.showAlert = true;
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   function typeQuestion(i, string) {
