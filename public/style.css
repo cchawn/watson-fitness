@@ -35,6 +35,11 @@ a.active {
   text-decoration: none;
 }
 
+h3 {
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  padding-bottom: 5px;
+}
+
 .left {
   float: left;
 }
@@ -55,12 +60,29 @@ a.active {
   cursor: pointer;
 }
 
-.title {
+.title,
+.subtitle {
   font-size: 60px;
+  line-height: 1.5em;
+  position: relative;
 }
 
 .subtitle {
   font-size: 30px;
+  margin-top: 30px;
+}
+
+.subtitle::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  bottom: auto;
+  left: 50%;
+  height: 5px;
+  width: 30px;
+  margin-left: -15px;
+  display: block;
+  background-color: #24B0E6;
 }
 
 .cta {
@@ -283,7 +305,22 @@ footer p.copyright {
 /* ABOUT - MARKETING */
 
 .about {
-  text-align: center;
+  /*text-align: center;*/
+}
+
+.about .hero {
+  position: relative;
+  height: 400px;
+  background: rgba(140, 198, 64, 0.9);
+}
+
+.about .hero .centered {
+  width: 80%;
+}
+
+.about .hero .centered .title,
+.about .hero .centered .subtitle {
+  color: #F6F6F6;
 }
 
 /********************/
@@ -307,6 +344,22 @@ footer p.copyright {
   }
 
   .home section.question-inputs .question input {
+    font-size: 18px;
+  }
+
+  .about .hero {
+    height: 300px;
+  }
+
+  .about .hero .centered {
+    width: 100%;
+  }
+
+  .about .hero .centered .title {
+    font-size: 30px;
+  }
+
+  .about .hero .centered .subtitle {
     font-size: 18px;
   }
 }
