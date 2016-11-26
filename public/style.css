@@ -48,6 +48,10 @@ h3 {
   float: left;
 }
 
+.middle {
+  padding-left: 50px;
+}
+
 .right {
   float: right;
 }
@@ -427,12 +431,14 @@ footer p.copyright {
   }
 }
 
-@media (max-width: 557px) {
+@media (max-width: 700px) {
   nav ul li a.nav-link,
   nav .cta {
     padding: 15px;
     font-size: 14px;
   }
+
+  .middle { padding-left: 0; }
 
   .home section.question-inputs .question input {
     font-size: 18px;
@@ -459,7 +465,7 @@ footer p.copyright {
 /*      MOBILE      */
 /********************/
 
-@media (max-width: 400px) {
+@media (max-width: 605px) {
   nav ul.left, nav ul.right {
     display: none;
   }
