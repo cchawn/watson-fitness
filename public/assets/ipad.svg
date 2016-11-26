@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1335px" height="917px" viewBox="0 0 1335 917" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <title>Showcase</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1275" height="857" rx="55"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="1275" height="857" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#F3F3F3" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-5" x="22" y="22" width="24" height="24" rx="6"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="24" height="24" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="0" y="0" width="1024" height="768"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-2" y="-2" width="1028" height="772">
+            <rect x="-2" y="-2" width="1028" height="772" fill="white"></rect>
+            <use xlink:href="#path-7" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="White" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-1" transform="translate(-147.000000, -158.000000)">
+            <g id="Showcase" transform="translate(177.000000, 188.000000)">
+                <g id="iPad">
+                    <g id="iPad-Body">
+                        <g>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use stroke="#DCDCDC" mask="url(#mask-3)" stroke-width="10" fill="#FAFAFA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                    <g id="Home-Button" transform="translate(1178.000000, 395.000000)" stroke-width="2">
+                        <circle id="Oval-1" stroke="#BFB9B9" fill="url(#linearGradient-4)" cx="34" cy="34" r="34"></circle>
+                        <use id="Rectangle-3" stroke="#B3B3B3" mask="url(#mask-6)" xlink:href="#path-5"></use>
+                    </g>
+                    <g id="Camera" transform="translate(62.000000, 420.000000)">
+                        <circle id="Oval-2" stroke="#BFB9B9" fill="#E6E6E6" cx="9" cy="9" r="9"></circle>
+                        <circle id="Oval-2" fill="#ABABAB" cx="9" cy="9" r="5"></circle>
+                    </g>
+                    <g id="Screen-Frame" transform="translate(125.000000, 45.000000)" opacity="0.7">
+                        <g>
+                            <use fill="#D4D4D4" fill-rule="evenodd" xlink:href="#path-7"></use>
+                            <use stroke="#363636" mask="url(#mask-8)" stroke-width="4" stroke-linejoin="round" xlink:href="#path-7"></use>
+                        </g>
+                    </g>
+                </g>
+                <g id="Placeholder" transform="translate(125.000000, 45.000000)">
+                    <rect id="Mask" fill="#FFFFFF" x="0" y="0" width="1024" height="768"></rect>
+                    <g id="Button" transform="translate(389.000000, 392.000000)">
+                        <rect id="Rectangle" fill="#24B0E6" x="0" y="0" width="250" height="80" rx="40"></rect>
+                        <text id="Ask-Watson" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="30" font-weight="bold" fill="#FFFFFF">
+                            <tspan x="40" y="51">Ask Watson</tspan>
+                        </text>
+                    </g>
+                    <g id="Input" transform="translate(229.000000, 272.000000)">
+                        <path d="M0.5,78.5 L566.5,78.5" id="Line" stroke="#979797" stroke-linecap="square"></path>
+                        <text id="How-can-I-help?" font-family="HelveticaNeue, Helvetica Neue" font-size="50" font-weight="normal" fill="#9B9B9B">
+                            <tspan x="0" y="48">How can I help?</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

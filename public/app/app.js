@@ -4,7 +4,8 @@ angular.module('watsonApp', [
   'ui.router',
   'watsonApp.home',
   'watsonApp.about',
-  'watsonApp.login'
+  'watsonApp.login',
+  'watsonApp.admin'
 ])
 
 .config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {

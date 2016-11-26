@@ -1,3 +1,30 @@
-<div class="centered">
-  <h2 class="title">Coming soon!</h2>
+<div class="centered login">
+  <p class="title">Log in to your account</p>
+   <form
+      class="login-form"
+      ng-submit="ctrl.login()">
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        ng-model="ctrl.username"
+        ng-focus="ctrl.clearAlert()">
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        ng-model="ctrl.password"
+        ng-focus="ctrl.clearAlert()">
+      <span 
+      class="my-alert"
+      ng-show="ctrl.showAlert">
+        {{ctrl.alertMsg}}
+      </span>
+      <button
+        type="submit"
+        class="cta cta-primary">
+        Log In
+      </button>
+      <span><a href="">Forgot password?</a></span>
+    </form>
 </div>

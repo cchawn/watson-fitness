@@ -13,6 +13,23 @@ angular.module('watsonApp.login', ['ui.router'])
 .controller('LoginCtrl', function($http, $scope, $state) {
   var loginCtrl = this;
 
-  loginCtrl.hello = 'hey there';
+  loginCtrl.$state = $state;
+  loginCtrl.showAlert = false;
+  loginCtrl.alertMsg = '';
+  loginCtrl.password = '';
+  loginCtrl.username = '';
+
+  function alert(show, msg){
+    loginCtrl.showAlert = show;
+    loginCtrl.alertMsg = msg;
+  }
+
+  loginCtrl.clearAlert = function(){
+    alert(false, '');
+  }
+
+  loginCtrl.login = function(){
+    loginCtrl.$state.go('admin');
+  }
 
 });

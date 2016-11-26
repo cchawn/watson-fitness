@@ -23,6 +23,13 @@ angular.module('watsonApp.home', ['ui.router'])
   homeCtrl.showAlert = false;
   homeCtrl.showMenu = false;
 
+  homeCtrl.isAdmin = function(state, css){
+    if (state == 'admin')
+      return css;
+    else
+      return '';
+  }
+
   homeCtrl.toggleMenu = function(){
     homeCtrl.showMenu = !homeCtrl.showMenu;
     if (homeCtrl.showMenu) {

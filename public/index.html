@@ -12,8 +12,12 @@
   <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-<body ng-controller="HomeCtrl as ctrl">
-  <nav class="container-fluid">
+<body 
+  ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'no-padding-admin')"
+  ng-controller="HomeCtrl as ctrl">
+  <nav 
+    ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'hide-on-admin')"
+    class="container-fluid">
     <ul class="left">
       <li>
         <a href="/"
@@ -45,7 +49,7 @@
       <li>
         <a href="/login"
           class="cta cta-border">
-          Sign up
+          Get Started
         </a>
       </li>
     </ul>
@@ -89,11 +93,15 @@
       </li>
     </ul>
   </div>
-  <div class="content">
+  <div 
+    ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'no-padding-admin')"
+    class="content">
     <h1 class="hidden">Watson Fitness Attendant</h1>
     <ui-view></ui-view>
   </div>
-  <footer class="container-fluid">
+  <footer 
+    ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'hide-on-admin')"
+    class="container-fluid">
     <ul class="left">
       <li><a href="/"><img alt="Watson Fitness Attendant" src="/assets/watson_logo.png"></a></li>
     </ul>
@@ -109,5 +117,6 @@
   <script src="./app/home/home.js"></script>
   <script src="./app/about/about.js"></script>
   <script src="./app/login/login.js"></script>
+  <script src="./app/admin/admin.js"></script>
 </body>
 </html>
