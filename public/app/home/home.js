@@ -122,10 +122,9 @@ angular.module('watsonApp.home', ['ui.router'])
     var placeholders = [
       'How can I strengthen my back?',
       'Should I lift weights with a back injury?',
-      'I have lower back pain, what exercises can I do?',
-      'What exercises are good for my back?'
+      'What do I do if my back hurts?'
     ];
-    var max = 3;
+    var max = 2;
     var min = 0;
     homeCtrl.question = '';
     var ind = Math.floor(Math.random() * (max - min + 1)) + min;

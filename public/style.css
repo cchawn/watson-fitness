@@ -44,6 +44,14 @@ h3 {
   padding-bottom: 5px;
 }
 
+.no-padding-right {
+  padding-right: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
 .left {
   float: left;
 }
@@ -416,6 +424,29 @@ footer p.copyright {
   border-left: 2px solid #8CC640;
   padding-left: 8px;
   font-weight: bold;
+}
+
+.admin .dashboard {
+  padding: 10px;
+  margin-left: 250px;
+  max-width: 1000px;
+}
+
+.admin .dashboard .widget {
+  margin: 10px;
+  padding: 10px;
+  background: #FFF;
+  /*width: 100%;*/
+}
+
+.admin .dashboard .widget.half {
+  width: 50%;
+  display: inline-block;
+}
+
+.admin .dashboard .widget h3 {
+  margin: 0;
+  font-size: 20px;
 }
 
 /********************/
