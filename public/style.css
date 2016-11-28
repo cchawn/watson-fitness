@@ -57,7 +57,7 @@ h3 {
 }
 
 .middle {
-  padding-left: 50px;
+  padding-left: 15px;
 }
 
 .right {
@@ -359,6 +359,57 @@ footer p.copyright {
   font-size: 40px;
   max-width: 600px;
   margin: 0 auto 30px;
+}
+
+/* BETA - SUBSCRIBE BOX */
+
+.beta {
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.beta h2.title,
+.beta p.catch {
+  margin: 60px 0 0 0;
+  font-size: 50px;
+  text-align: center;
+}
+
+.beta p.catch {
+  margin: 10px auto;
+  max-width: 400px;
+  font-size: 20px;
+  line-height: 1.5em;
+  color: #B9B9B9;
+}
+
+.beta form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.beta form input {
+  width: 100%;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-radius: 0;
+  padding: 15px 0;
+}
+
+.beta form input.inline {
+  width: 190px;
+  float: left;
+}
+
+.beta form input.inline:first-child{
+  margin-right: 20px;
+}
+
+.beta form button {
+  float: right;
+  margin: 10px 0;
 }
 
 /* DEMO */
