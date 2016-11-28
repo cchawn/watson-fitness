@@ -98,7 +98,6 @@ angular.module('watsonApp.home', ['ui.router'])
     homeCtrl.question = '';
     homeCtrl.answer = '';
     homeCtrl.confidence = 0;
-    typing();
   };
 
   homeCtrl.clearAlert = function(){
@@ -127,9 +126,9 @@ angular.module('watsonApp.home', ['ui.router'])
 
   function typing() {
     var placeholders = [
-      'How can I strengthen my back?',
       'Should I lift weights with a back injury?',
-      'What do I do if my back hurts?'
+      'What should I do if my back hurts?',
+      'Can I use an exercise ball if I have back pain?'
     ];
     var max = 2;
     var min = 0;
