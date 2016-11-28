@@ -1,7 +1,7 @@
 var express = require('express');
 var https = require('https');
 var bodyParser = require('body-parser');
-// var watson = require('watson-developer-cloud');
+
 var app = express();
 
 var port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
@@ -20,13 +20,13 @@ app.post('/question', function(req, res){
   var syncTimeout = "1";
   var query = req.body.question;
 
-  console.log("Timeout:" + syncTimeout + " Query:" + query);
+  console.log("Query:" + query);
 
   // Set the required headers for posting the REST query to Watson
   var headers = {
     'Content-Type'  :'application/json',
     'X-synctimeout' : syncTimeout,
-    'Authorization' : "Basic " + new Buffer("quk_student10"+":"+"D8WLxiLk").toString("base64")
+    'Authorization' : "Basic " + new Buffer(username+":"+passwd).toString("base64")
   };
 
   // Create the request options to POST our question to Watson
@@ -73,10 +73,7 @@ app.post('/question', function(req, res){
 
   // Set the POST body and send to Watson
   post_req.write(JSON.stringify(question));
-  // post_req.write("\n\n");
   post_req.end();
-
-  // res.send('it did a thing');
 });
 
 app.all('/*', function(req, res, next) {
@@ -85,5 +82,5 @@ app.all('/*', function(req, res, next) {
 });
 
 app.listen(port, function () {
-  console.log('Running on:' + port);
+  console.log('Running on: ' + port);
 });

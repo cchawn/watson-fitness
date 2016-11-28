@@ -30,6 +30,13 @@ angular.module('watsonApp.home', ['ui.router'])
       return '';
   }
 
+  homeCtrl.isDemo = function(state, css){
+    if (state == 'demo')
+      return css;
+    else
+      return '';
+  }
+
   homeCtrl.toggleMenu = function(){
     homeCtrl.showMenu = !homeCtrl.showMenu;
     if (homeCtrl.showMenu) {

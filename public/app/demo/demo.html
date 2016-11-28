@@ -1,0 +1,49 @@
+<div class="demo">
+  <section class="question-inputs container-fluid">
+    <form
+      class="question"
+      ng-submit="ctrl.askWatson()"
+      autocomplete="off">
+      <input
+        type="text"
+        id="question-input"
+        placeholder="{{ctrl.placeholder}}"
+        ng-model="ctrl.question"
+        ng-focus="ctrl.clearAlert()"
+        select-on-click>
+      <span 
+      class="my-alert"
+      ng-show="ctrl.showAlert">
+        {{ctrl.alertMsg}}
+      </span>
+      <button
+        type="submit"
+        class="cta cta-primary">
+        Ask Watson
+      </button>
+    </form>
+  </section>
+
+  <section
+    class="answer"
+    ng-show="ctrl.showAnswer">
+    <div class="answer-header">
+      <h2>{{ctrl.question}}</h2>
+      <div class="right">
+        <a
+          ng-click="ctrl.dismiss()"
+          href="#"
+          title="Dismiss">
+          <img src="../../assets/multiply.svg">
+        </a>
+      </div>
+    </div>
+    <div class="answer-text">
+      <p>{{ctrl.answer}}</p>
+      <p class="confidence">Confidence: {{ctrl.confidence | number:2}}</p>
+    </div>
+    <div class="answer-footer">
+      <button ng-click="ctrl.dismiss()" class="cta cta-small cta-border">Close</button>
+    </div>
+  </section>
+</div>

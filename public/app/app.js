@@ -5,11 +5,13 @@ angular.module('watsonApp', [
   'watsonApp.home',
   'watsonApp.about',
   'watsonApp.login',
-  'watsonApp.admin'
+  'watsonApp.admin',
+  'watsonApp.demo',
+  'watsonApp.beta'
 ])
 
 .config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
-
+  
   $stateProvider.state("otherwise", {
       url: "*path",
       templateUrl: 'app/home/404.html',

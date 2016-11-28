@@ -13,24 +13,24 @@
   <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body 
-  ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'no-padding-admin')"
+  ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'no-padding')"
   ng-controller="HomeCtrl as ctrl">
   <nav 
-    ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'hide-on-admin')"
+    ng-class="ctrl.isAdmin(ctrl.$state.current.name, 'hidden')"
     class="container-fluid">
     <ul class="left">
       <li>
         <a href="/"
           ng-class="ctrl.activeLink(ctrl.$state.current.name, 'home')"
           class="nav-link">
-          Demo
+          Home
         </a>
       </li>
       <li>
-        <a href="/about"
-          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'about')"
+        <a href="/demo"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'demo')"
           class="nav-link">
-          About
+          Demo
         </a>
       </li>
     </ul>
@@ -47,9 +47,9 @@
         </a>
       </li>
       <li>
-        <a href="/login"
+        <a href="/beta"
           class="cta cta-border">
-          Get Started
+          Sign up
         </a>
       </li>
     </ul>
@@ -68,14 +68,14 @@
         <a href="/"
           ng-class="ctrl.activeLink(ctrl.$state.current.name, 'home')"
           class="nav-link">
-          Demo
+          Home
         </a>
       </li>
       <li ng-click="ctrl.toggleMenu()">
-        <a href="/about"
-          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'about')"
+        <a href="/"
+          ng-class="ctrl.activeLink(ctrl.$state.current.name, 'demo')"
           class="nav-link">
-          About
+          Demo
         </a>
       </li>
       <li ng-click="ctrl.toggleMenu()">
@@ -86,7 +86,7 @@
         </a>
       </li>
       <li ng-click="ctrl.toggleMenu()">
-        <a href="/login"
+        <a href="/beta"
           class="nav-link">
           Sign up
         </a>
@@ -118,5 +118,7 @@
   <script src="./app/about/about.js"></script>
   <script src="./app/login/login.js"></script>
   <script src="./app/admin/admin.js"></script>
+  <script src="./app/demo/demo.js"></script>
+  <script src="./app/beta/beta.js"></script>
 </body>
 </html>

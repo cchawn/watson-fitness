@@ -1,49 +1,33 @@
 <div class="home">
-  <section class="question-inputs container-fluid">
-    <form
-      class="question"
-      ng-submit="ctrl.askWatson()"
-      autocomplete="off">
-      <input
-        type="text"
-        id="question-input"
-        placeholder="{{ctrl.placeholder}}"
-        ng-model="ctrl.question"
-        ng-focus="ctrl.clearAlert()"
-        select-on-click>
-      <span 
-      class="my-alert"
-      ng-show="ctrl.showAlert">
-        {{ctrl.alertMsg}}
-      </span>
-      <button
-        type="submit"
-        class="cta cta-primary">
-        Ask Watson
-      </button>
-    </form>
-  </section>
-
-  <section
-    class="answer"
-    ng-show="ctrl.showAnswer">
-    <div class="answer-header">
-      <h2>{{ctrl.question}}</h2>
-      <div class="right">
-        <a
-          ng-click="ctrl.dismiss()"
-          href="#"
-          title="Dismiss">
-          <img src="../../assets/multiply.svg">
-        </a>
+  <div class="ipad">
+    <div class="screen">
+      <h2>Watson Fitness Attendant</h2>
+      <p>Getting the answers to your health and fitness questions has never been easier.</p>
+      <a href="/demo"><button class="cta cta-primary">Ask Watson</button></a>
+    </div>
+    <!-- <img class="background" src="../../assets/ipad.svg"> -->
+  </div>
+  <div class="cards-wrapper">
+    <div class="cards">
+      <div class="card">
+        <h3 class="card-title">One</h3>
+        <p class="card-catch">Lorem ipsum dolor sit amet.</p>
+        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Two</h3>
+        <p class="card-catch">Lorem ipsum dolor sit amet.</p>
+        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Three</h3>
+        <p class="card-catch">Lorem ipsum dolor sit amet.</p>
+        <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </div>
-    <div class="answer-text">
-      <p>{{ctrl.answer}}</p>
-      <p class="confidence">Confidence: {{ctrl.confidence | number:2}}</p>
-    </div>
-    <div class="answer-footer">
-      <button ng-click="ctrl.dismiss()" class="cta cta-small cta-border">Close</button>
-    </div>
-  </section>
+  </div>
+  <div class="bottom-cta">
+    <p>What are you waiting for?</p>
+    <a href="/beta"><button class="cta cta-primary">Get Started</button></a>
+  </div>
 </div>
