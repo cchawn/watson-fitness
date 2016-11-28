@@ -391,7 +391,6 @@ footer p.copyright {
 
 .beta form input {
   width: 100%;
-  margin: 10px 0;
   border: none;
   border-bottom: 1px solid rgba(0,0,0,.08);
   border-radius: 0;
@@ -409,7 +408,7 @@ footer p.copyright {
 
 .beta form button {
   float: right;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 /* DEMO */
